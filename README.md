@@ -32,7 +32,7 @@ Two persistent volumes are used to store data:
   Stores the MariaDB database data.
 
 - **wordpress_files**  
-  Stores the WordPress website files.
+  Stores the WordPress w need SSL/TLS certificates.ebsite files.
 
 ## Instructions
 
