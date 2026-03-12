@@ -4,7 +4,7 @@
 
 ## Description
 
-Containerized infrastructure built with [Docker](https://www.docker.com/) and [Docker Compose](https://docs.docker.com/compose/).
+Containerized infrastructure built with **Docker** and **Docker Compose**.
 
 ### Diagram of the infrastructure:
 
@@ -33,13 +33,13 @@ Two persistent volumes are used to store data:
   Stores the MariaDB database data.
 
 - **wordpress_files**  
+## Instructions
   Stores the WordPress website files.
 
 ## Instructions
 
 [ TO BE COMPLETED ]
 
-## Instructions
 ## Resources
 
 ### Documentation
