@@ -4,6 +4,9 @@ services:
     build: ./nginx/
     ports:
       - "1024:443"
+  wordpress:
+    image: wordpress:1
+    build: ./wordpress/
   mariadb:
     image: mariadb:1
     build: ./mariadb/
