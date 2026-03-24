@@ -16,7 +16,7 @@ The infrastructure consists of the following **services**:
 
 - **NGINX**  
   Handles HTTPS traffic and acts as the entry point of the infrastructure.
-  Configured to support **TLSv1.2 and TLSv1.3 only**.
+  Configured to support **TLSv1.2** and **TLSv1.3**.
 
 - **WordPress + PHP-FPM**  
   Runs the WordPress application and processes PHP requests.
