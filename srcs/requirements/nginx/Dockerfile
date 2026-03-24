@@ -11,7 +11,7 @@ RUN     openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
 COPY    conf/nginx.conf /etc/nginx/conf.d/
 
 RUN     rm /var/www/html/index.nginx-debian.html
-COPY    ./index.html /var/www/html/
+COPY    ./html/index.html /var/www/html/
 
 EXPOSE  443
 
