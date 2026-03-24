@@ -1,0 +1,9 @@
+services:
+  nginx:
+    image: nginx
+    build: ./requirements/nginx
+    container_name: nginx
+  mariadb:
+    image: mariadb
+    build: ./requirements/mariadb
+    container_name: mariadb
