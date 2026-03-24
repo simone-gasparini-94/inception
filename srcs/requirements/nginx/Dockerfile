@@ -1,9 +1,18 @@
-FROM debian:12
+FROM    debian:12
 
-RUN apt-get update
-RUN apt-get install nginx -y
-RUN rm /var/www/html/index.nginx-debian.html
+RUN     apt-get update
+RUN     apt-get install nginx openssl -y
 
-COPY ./index.html /var/www/html/
+RUN     openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
+        -keyout /etc/ssl/private/nginx.key \
+        -out /etc/ssl/certs/nginx.crt \
+        -subj "/CN=sgaspari.42.fr"
 
-CMD ["nginx", "-g", "daemon off;"]
+COPY    conf/nginx.conf /etc/nginx/conf.d/
+
+RUN     rm /var/www/html/index.nginx-debian.html
+COPY    ./index.html /var/www/html/
+
+EXPOSE  443
+
+CMD     ["nginx", "-g", "daemon off;"]
