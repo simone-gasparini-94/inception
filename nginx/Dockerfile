@@ -1,12 +1,18 @@
 FROM        debian:12
 
-WORKDIR     /usr/src/app
+ARG         DOMAIN_NAME
 
-RUN         apt-get update && apt-get install -y nginx
+RUN         apt-get update && apt-get install -y nginx openssl
 
-EXPOSE      80
+EXPOSE      443
 
-COPY        ./nginx_script.sh .
-RUN         chmod +x nginx_script.sh
+RUN         openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
+            -keyout /etc/ssl/private/nginx.key \
+            -out /etc/ssl/certs/nginx.crt \
+            -subj "/CN=${DOMAIN_NAME}}"
 
-CMD         [ "./nginx_script.sh"]
+COPY        ./nginx.conf  /etc/nginx/conf.d/
+
+COPY        ./index.html /var/www/html/
+
+CMD         [ "nginx", "-g", "daemon off;"]
