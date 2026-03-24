@@ -15,4 +15,6 @@ RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
 
 COPY ./nginx.conf  /etc/nginx/conf.d/
 
+RUN sed -i 's| server_name ;| server_name ${DOMAIN_NAME};|'
+
 CMD [ "nginx", "-g", "daemon off;"]
