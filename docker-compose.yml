@@ -13,7 +13,7 @@ services:
     volumes:
       - wordpress_data:/var/www/html
     environment:
-      WORDPRESS_DB_HOST: mariadb:3306
+      WORDPRESS_DB_HOST: mariadb
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: wordpresspass
       WORDPRESS_DB_NAME: wordpress
@@ -24,9 +24,9 @@ services:
     build: ./mariadb
     environment:
       MYSQL_ROOT_PASSWORD: rootpassword
-      MYSQL_DATABASE: wordpress
-      MYSQL_USER: wordpress
-      MYSQL_PASSWORD: wordpresspass
+    volumes:
+      - mariadb_data:/var/lib/mysql
 
 volumes:
   wordpress_data:
+  mariadb_data:
