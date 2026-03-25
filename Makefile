@@ -1,12 +1,14 @@
+FILE=./src/docker-compose.yml
+
 up:
-	docker compose up
+	docker compose -f $(FILE) up
 build:
-	docker compose up --build
+	docker compose -f $(FILE) up --build
 down:
-	docker compose down
+	docker compose -f $(FILE) down
 erase:
-	docker compose down -v
+	docker compose -f $(FILE) down -v
 ps:
-	docker compose ps
+	docker compose -f $(FILE) ps
 
 .PHONY: up build down clear ps
