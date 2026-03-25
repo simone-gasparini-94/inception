@@ -13,9 +13,9 @@ if [ ! -f "$MARKER_FILE" ]; then
         sleep 1
     done
 
-    mariadb -u root -S /var/run/mysqld/mysqld.sock -e "CREATE DATABASE IF NOT EXISTS \`${MARIADB_DATABASE}\`;"
-    mariadb -u root -S /var/run/mysqld/mysqld.sock -e "CREATE USER IF NOT EXISTS '${MARIADB_USER}'@'%' IDENTIFIED BY '${MARIADB_PASSWORD}';"
-    mariadb -u root -S /var/run/mysqld/mysqld.sock -e "GRANT ALL PRIVILEGES ON \`${MARIADB_DATABASE}\`.* TO '${MARIADB_USER}'@'%';"
+    mariadb -u root -S /var/run/mysqld/mysqld.sock -e "CREATE DATABASE IF NOT EXISTS \`${DB_NAME}\`;"
+    mariadb -u root -S /var/run/mysqld/mysqld.sock -e "CREATE USER IF NOT EXISTS '${DB_USER}'@'%' IDENTIFIED BY '${DB_PASSWORD}';"
+    mariadb -u root -S /var/run/mysqld/mysqld.sock -e "GRANT ALL PRIVILEGES ON \`${DB_NAME}\`.* TO '${DB_USER}'@'%';"
     mariadb -u root -S /var/run/mysqld/mysqld.sock -e "FLUSH PRIVILEGES;"
 
     touch "$MARKER_FILE"
