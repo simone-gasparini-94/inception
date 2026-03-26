@@ -36,7 +36,40 @@ Two persistent volumes are used to store data:
 
 ## Instructions
 
-[ TO BE COMPLETED ]
+*Note: to run this project you need to have [Docker](https://www.docker.com/) installed. You can find the installation guide [here](https://docs.docker.com/desktop/?_gl=1*19toit*_gcl_au*MTYyMDUxNDMyNC4xNzcwMDIzNTk3*_ga*NTM5NTMzMTIwLjE3NzAwMjM1OTg.*_ga_XJWPQMJYHQ*czE3NzA4MDE0ODUkbzQkZzEkdDE3NzA4MDE0ODYkajU5JGwwJGgw).*
+
+Clone this repository via the web URL or via SSH:
+
+```bash
+https://github.com/simone-gasparini-94/inception
+```
+
+Change to the project directory:
+
+```bash
+cd inception
+```
+
+In order to run the containers, it is necessary to store the password for Wordpress and MariaDB in a file:
+
+```bash
+mkdir secrets && echo "<password>" > ./secrets/password.txt
+```
+
+You can replace `<password>` with a password of your choice.
+
+
+Run docker compose via the Makefile:
+
+```bash
+make build
+```
+
+Wait for Docker to build the images and run the containers, then you can paste this URL in the browser:
+
+```bash
+https://sgaspari.42.fr
+```
 
 ## Resources
 
