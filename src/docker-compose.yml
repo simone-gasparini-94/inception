@@ -1,6 +1,7 @@
 services:
   nginx:
     build: ./nginx
+    image: nginx
     ports:
       - "443:443"
     volumes:
@@ -9,22 +10,27 @@ services:
       - wordpress
     env_file:
       - .env
+    restart: unless-stopped
 
   wordpress:
     build: ./wordpress
+    image: wordpress
     volumes:
       - wordpress_data:/var/www/html
     depends_on:
       - mariadb
     env_file:
       - .env
+    restart: unless-stopped
 
   mariadb:
     build: ./mariadb
+    image: mariadb
     env_file:
       - .env
     volumes:
       - mariadb_data:/var/lib/mysql
+    restart: unless-stopped
 
 volumes:
   wordpress_data:
