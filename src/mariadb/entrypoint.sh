@@ -2,6 +2,7 @@
 set -e
 
 MARKER_FILE="/var/lib/mysql/.db_initialized"
+DB_PASSWORD=$(cat /run/secrets/password)
 
 if [ ! -f "$MARKER_FILE" ]; then
     echo "Marker file does not exist"

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+DB_PASSWORD=$(cat /run/secrets/password) 
+
 cp -r /tmp/wordpress/* /var/www/html/
 rm -rf /tmp/wordpress/*
 

@@ -21,6 +21,8 @@ services:
       - mariadb
     env_file:
       - .env
+    secrets:
+      - password
     restart: unless-stopped
 
   mariadb:
@@ -28,6 +30,8 @@ services:
     image: mariadb
     env_file:
       - .env
+    secrets:
+      - password
     volumes:
       - mariadb_data:/var/lib/mysql
     restart: unless-stopped
@@ -46,3 +50,7 @@ volumes:
       type: none
       o: bind
       device: ~/data/wordpress
+    
+secrets:
+  password:
+    file: ../secrets/password.txt
