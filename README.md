@@ -8,7 +8,24 @@ Containerized infrastructure built with **Docker** and **Docker Compose**.
 
 ### Diagram of the infrastructure:
 
-![Infrastructore diagram](./assets/infrastructure-diagram.png)
+```mermaid
+flowchart TB
+    A([WWW])
+    B["NGINX"]
+    C["WordPress
+    + PHP-FPM"]
+    D[MariaDB]
+    E[(Volume)]
+    F[(Volume)]
+
+    A <--->|443| B
+    B <-->|9000| C
+    C <-->|3306| D
+
+    B <-----> E
+    C <---> E
+    D <---> F
+```
 
 ### Services
 
