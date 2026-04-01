@@ -51,14 +51,14 @@ Two persistent volumes are used to store data:
 - **wordpress_files**  
   Stores the WordPress website files.
 
-## Instructions
+## How to run
 
 *Note: to run this project you need to have [Docker](https://www.docker.com/) installed. You can find the installation guide [here](https://docs.docker.com/desktop/?_gl=1*19toit*_gcl_au*MTYyMDUxNDMyNC4xNzcwMDIzNTk3*_ga*NTM5NTMzMTIwLjE3NzAwMjM1OTg.*_ga_XJWPQMJYHQ*czE3NzA4MDE0ODUkbzQkZzEkdDE3NzA4MDE0ODYkajU5JGwwJGgw).*
 
 Clone this repository via the web URL or via SSH:
 
 ```bash
-https://github.com/simone-gasparini-94/inception
+git clone https://github.com/simone-gasparini-94/inception
 ```
 
 Change to the project directory:
