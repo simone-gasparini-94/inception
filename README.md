@@ -89,7 +89,7 @@ Since the infrastructure runs entirely locally, it is not accessible from the pu
 https://127.0.0.1
 ```
 
-The TLS certificate is self-signed, so your browser will show a security warning. This is expected, you can safely proceed past it.
+The TLS certificate is self-signed, so your browser will show a security warning. This is expected, you can safely proceed past it by clicking "Advanced" → "Proceed to 127.0.0.1 (unsafe)".
 
 ## Resources
 
