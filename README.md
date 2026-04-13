@@ -2,30 +2,7 @@
 
 # inception
 
-## Description
-
 Containerized infrastructure built with **Docker** and **Docker Compose** with no pre-built images.
-
-### Diagram of the infrastructure:
-
-```mermaid
-flowchart TB
-    A([WWW])
-    B["NGINX"]
-    C["WordPress
-    + PHP-FPM"]
-    D[MariaDB]
-    E[(Volume)]
-    F[(Volume)]
-
-    A <-->|443| B
-    B <-->|9000| C
-    C <-->|3306| D
-
-    B <----> E
-    C <--> E
-    D <--> F
-```
 
 ### Services
 
@@ -51,6 +28,27 @@ Two persistent volumes are used to store data:
 - **wordpress_files**  
   Stores the WordPress website files.
 
+### Diagram of the infrastructure:
+
+```mermaid
+flowchart TB
+    A([WWW])
+    B["NGINX"]
+    C["WordPress
+    + PHP-FPM"]
+    D[MariaDB]
+    E[(Volume)]
+    F[(Volume)]
+
+    A <-->|443| B
+    B <-->|9000| C
+    C <-->|3306| D
+
+    B <----> E
+    C <--> E
+    D <--> F
+```
+
 ## How to run
 
 *Note: to run this project you need to have [Docker](https://www.docker.com/) installed. You can find the installation guide [here](https://docs.docker.com/desktop/?_gl=1*19toit*_gcl_au*MTYyMDUxNDMyNC4xNzcwMDIzNTk3*_ga*NTM5NTMzMTIwLjE3NzAwMjM1OTg.*_ga_XJWPQMJYHQ*czE3NzA4MDE0ODUkbzQkZzEkdDE3NzA4MDE0ODYkajU5JGwwJGgw).*
@@ -74,7 +72,7 @@ In order to run the containers, it is necessary to store the password for Wordpr
 mkdir secrets && echo "<password>" > ./secrets/password.txt
 ```
 
-You can replace `<password>` with a password of your choice.
+Replace `<password>` with a password of your choice.
 
 
 Run docker compose via the Makefile:
