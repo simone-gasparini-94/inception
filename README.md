@@ -6,7 +6,7 @@
 
 Containerized infrastructure built with **Docker** and **Docker Compose** with no pre-built images.
 
-### Services
+## Services
 
 The infrastructure consists of the following **services**, each isolated in its own container:
 
@@ -20,7 +20,7 @@ The infrastructure consists of the following **services**, each isolated in its 
 - **MariaDB**  
   Provides the database used by WordPress.
 
-### Volumes
+## Volumes
 
 Two persistent volumes are used to store data:
 
@@ -30,7 +30,7 @@ Two persistent volumes are used to store data:
 - **wordpress_files**  
   Stores the WordPress website files.
 
-### Diagram of the infrastructure:
+## Diagram of the infrastructure:
 
 ```mermaid
 flowchart TB
